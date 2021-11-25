@@ -10,7 +10,7 @@ import {
   
   const FormateDate = (timestamp)=>{
       const date = new Date(timestamp);
-      const segment = (new Date()).toLocaleTimeString().split(':');
+      const segment = date.toLocaleTimeString().split(':');
       const ifAMPM = segment[2].split(' ')[1];
       return ifAMPM ? segment[0]+":"+segment[1]+" "+ifAMPM : segment[0]+":"+segment[1];
   }
