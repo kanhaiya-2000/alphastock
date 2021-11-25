@@ -10,7 +10,9 @@ import {
   
   const FormateDate = (timestamp)=>{
       const date = new Date(timestamp);
-      return date.toLocaleTimeString();
+      const segment = (new Date()).toLocaleTimeString().split(':');
+      const ifAMPM = segment[2].split(' ')[1];
+      return ifAMPM ? segment[0]+":"+segment[1]+" "+ifAMPM : segment[0]+":"+segment[1];
   }
   export default function Chart2({data}) {
     return (
